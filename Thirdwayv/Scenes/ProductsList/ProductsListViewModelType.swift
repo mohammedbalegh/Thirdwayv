@@ -22,7 +22,7 @@ protocol ProductsListViewModelInput {
 /// ProductsList ViewModel Output
 ///
 protocol ProductsListViewModelOutput {
-    var items: Observable<[Product]> { get }
+    var products: Observable<[Product]> { get }
     var error: Observable<String> { get }
     var selectedProduct: Product? { get }
 }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="Thirdwayv" customModuleProvider="target">
+            <connections>
+                <outlet property="dismissButton" destination="0Mi-V3-crq" id="fwd-fz-Hsg"/>
+                <outlet property="productDescriptionLabel" destination="xcE-6W-dOS" id="zAM-ba-QgE"/>
+                <outlet property="productImageView" destination="bPY-bs-LWs" id="7pM-f6-aYR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bPY-bs-LWs" customClass="ImageLoader" customModule="Thirdwayv" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="680"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcE-6W-dOS">
+                    <rect key="frame" x="4" y="690" width="382" height="154"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mi-V3-crq">
+                    <rect key="frame" x="16" y="85" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="ZQP-aq-tsz"/>
+                        <constraint firstAttribute="height" constant="35" id="p7q-3S-kxK"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="multiply.circle.fill" catalog="system"/>
+                    <connections>
+                        <action selector="dismissTapped:" destination="-1" eventType="touchUpInside" id="zoD-ZE-g79"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="IgU-At-07W"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bPY-bs-LWs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5bg-mp-doj"/>
+                <constraint firstItem="xcE-6W-dOS" firstAttribute="top" secondItem="bPY-bs-LWs" secondAttribute="bottom" constant="10" id="CWX-9V-MDq"/>
+                <constraint firstItem="xcE-6W-dOS" firstAttribute="leading" secondItem="IgU-At-07W" secondAttribute="leading" constant="4" id="Krd-4P-k7I"/>
+                <constraint firstItem="bPY-bs-LWs" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.75" constant="47" id="M0I-VP-lIm"/>
+                <constraint firstItem="bPY-bs-LWs" firstAttribute="leading" secondItem="IgU-At-07W" secondAttribute="leading" id="Utw-RO-lpD"/>
+                <constraint firstItem="IgU-At-07W" firstAttribute="trailing" secondItem="xcE-6W-dOS" secondAttribute="trailing" constant="4" id="Wn8-hv-J5r"/>
+                <constraint firstAttribute="bottom" secondItem="xcE-6W-dOS" secondAttribute="bottom" id="heQ-5L-zzv"/>
+                <constraint firstItem="IgU-At-07W" firstAttribute="trailing" secondItem="bPY-bs-LWs" secondAttribute="trailing" id="jKf-Em-Oxb"/>
+                <constraint firstItem="0Mi-V3-crq" firstAttribute="top" secondItem="IgU-At-07W" secondAttribute="top" constant="38" id="kxn-1r-gzb"/>
+                <constraint firstItem="0Mi-V3-crq" firstAttribute="leading" secondItem="IgU-At-07W" secondAttribute="leading" constant="16" id="ygw-8K-lFg"/>
+            </constraints>
+            <point key="canvasLocation" x="-7.6923076923076916" y="-17.061611374407583"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="multiply.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
+</document>

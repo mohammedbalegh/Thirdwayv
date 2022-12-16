@@ -12,7 +12,7 @@ import Foundation
 class ProductsListViewModel: ProductsListViewModelType {
     var selectedProduct: Product?
     var getProducts: ProductsCall
-    var items: Observable<[Product]> = Observable([])
+    var products: Observable<[Product]> = Observable([])
     var error: Observable<String> = Observable("")
 
     init(getProducts: ProductsCall) {
@@ -23,7 +23,7 @@ class ProductsListViewModel: ProductsListViewModelType {
         getProducts.loadData { [weak self] result in
             switch result {
             case .success(let products):
-                self?.items.value.append(contentsOf: products)
+                self?.products.value.append(contentsOf: products)
             case .failure(let error):
                 self?.error.value = error.localizedDescription
             }
@@ -31,7 +31,7 @@ class ProductsListViewModel: ProductsListViewModelType {
     }
 
     func selectedIndex(_ indexPath: IndexPath) {
-        selectedProduct = items.value[indexPath.row]
+        selectedProduct = products.value[indexPath.row]
     }
 }
 
