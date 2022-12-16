@@ -44,7 +44,6 @@ class ImageLoader: UIImageView {
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
 
             if error != nil {
-                print(error as Any)
                 DispatchQueue.main.async(execute: {
                     self.activityIndicator.stopAnimating()
                 })

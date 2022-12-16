@@ -19,12 +19,12 @@ public enum NetworkingError: Error {
 extension NetworkingError: LocalizedError {
     public var errorDescription: String? {
         switch self {
-            case .noInternetConnection:           return "No Internet Connection"
-            case .badRequest:        return "invalid Request"
+            case .noInternetConnection: return "No Internet Connection"
+            case .badRequest: return "invalid Request"
             case .custom(let message): return message
-            case .invalidServerResponse:          return "Internal Server response"
-            case .invalidURL:                return "invalid url"
-            case .encodingFailed:       return "failed to encode"
+            case .invalidServerResponse: return "Internal Server response"
+            case .invalidURL: return "invalid url"
+            case .encodingFailed: return "failed to encode"
         }
     }
 }

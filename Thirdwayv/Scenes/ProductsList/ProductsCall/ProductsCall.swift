@@ -17,13 +17,14 @@ class ProductsList: ProductsCall {
     var networkCheck = NetworkMonitor.shared
 
     func loadData(completion: @escaping ((Result<[Product], Error>) -> Void)) {
+
         APIManager().fetchData(request: ProductsRequest.products,
                                model: [Product].self) { result in
             switch result {
             case .success(let products):
                 self.networkCheck.isConnected.remove(observer: self)
+                UserDefaultsManager.shared.save(model: products, key: Keys.product)
                 completion(.success(products))
-                // TODO: Cache Products
             case .failure(let error):
                 if let error = error as? NetworkingError {
                     switch error {
@@ -37,8 +38,13 @@ class ProductsList: ProductsCall {
                         break
                     }
                 }
+                switch UserDefaultsManager.shared.retrieve(key: Keys.product) {
+                case .success(let result):
+                    completion(.success(result))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
                 completion(.failure(error))
-                // TODO: Get cached products
             }
         }
     }
