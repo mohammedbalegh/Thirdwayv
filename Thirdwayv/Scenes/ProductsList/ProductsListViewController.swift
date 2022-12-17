@@ -18,6 +18,7 @@ class ProductsListViewController: UIViewController {
     private let popup = AlertPopup()
     private var selectedCellImageViewSnapshot: UIView?
     private var animator: Animator?
+
     // MARK: Init
 
     init(viewModel: ProductsListViewModelType) {
@@ -107,7 +108,7 @@ extension ProductsListViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.products.value.count - 2 {
+        if indexPath.row == viewModel.products.value.count - 3 {
             viewModel.loadProducts()
         }
     }
