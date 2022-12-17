@@ -1,6 +1,6 @@
 # Thirdwayv
 
-#- Design patterns used:
+# Design patterns used:
 
 1-Observer: 
   1. Used it in network minotoring to get notified of the network connection changes.
