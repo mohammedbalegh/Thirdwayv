@@ -12,6 +12,6 @@
 -----------------------------------------------------------------------------------------
 
 # Architecture pattern used is MVVM:
-  1- Cleaner and smaller viewcontroller with the logic moved to the viewmodel.
-  2- ViewModel never knows what the view is or what the view does which makes Better Separation of Concerns.
-  3- Testing view models is easy. Because a view model doesn’t have a reference to the object it is owned by, it easy to write unit tests for a view model.
+1. Cleaner and smaller viewcontroller with the logic moved to the viewmodel.
+2. ViewModel never knows what the view is or what the view does which makes Better Separation of Concerns.
+3. Testing view models is easy. Because a view model doesn’t have a reference to the object it is owned by, it easy to write unit tests for a view model.
