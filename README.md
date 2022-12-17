@@ -1,10 +1,11 @@
 # Thirdwayv
 
 1- Design patterns used:
+
 1-Observer: 
   1. Used it in network minotoring to get notified of the network connection changes.
   2. Bind the data in the viewmodel to the viewcontroller and update the UI accordingly.
-------------
+
 2- Singleton Pattern:
   1. Used in UserDefaults manager.
   2. Used in the network monitoring class.
