@@ -8,13 +8,10 @@
 import UIKit
 
 class ProductsListViewController: UIViewController {
-    // MARK: Outlets
 
-    @IBOutlet weak var productsCollectionView: UICollectionView! {
-        didSet {
-            setupCollectionView()
-        }
-    }
+    // MARK: Outlets
+    @IBOutlet weak var productsCollectionView: UICollectionView!
+
     // MARK: Properties
     var selectedCell: ProductCollectionViewCell?
     private let viewModel: ProductsListViewModelType
@@ -37,6 +34,7 @@ class ProductsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
         viewModel.loadProducts()
         setupCollectionView()
         bindViewModel()
@@ -66,15 +64,16 @@ extension ProductsListViewController {
 }
 
 extension ProductsListViewController {
-
     func bindViewModel() {
         viewModel.products.observe(on: self) { [weak self] _ in
             if self!.viewModel.products.value.count > 0 {
                 self?.productsCollectionView.reloadData()
+            } else if self!.viewModel.products.value.count == 0 && NetworkMonitor.shared.isConnected.value == false {
+                self?.view.addSubview(self!.popup)
+                self?.popup.presentAsInternetConnectionError()
             }
         }
     }
-
 }
 
 // MARK: - collectionView

@@ -10,12 +10,11 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
 
     // MARK: Outlets
-
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var productImageView: ImageLoader!
-    // MARK: Properties
 
+    // MARK: Properties
     private let viewModel: ProductDetailsViewModelType
 
     // MARK: Init

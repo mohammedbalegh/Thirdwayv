@@ -29,12 +29,4 @@ class ProductsListViewModel: ProductsListViewModelType {
             }
         }
     }
-
-    func selectedIndex(_ indexPath: IndexPath) {
-        selectedProduct = products.value[indexPath.row]
-    }
 }
-
-// MARK: Private Handlers
-
-private extension ProductsListViewModel {}

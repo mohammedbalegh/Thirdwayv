@@ -17,12 +17,10 @@ class ProductsList: ProductsCall {
     var networkCheck = NetworkMonitor.shared
 
     func loadData(completion: @escaping ((Result<[Product], Error>) -> Void)) {
-
         APIManager().fetchData(request: ProductsRequest.products,
                                model: [Product].self) { result in
             switch result {
             case .success(let products):
-                self.networkCheck.isConnected.remove(observer: self)
                 UserDefaultsManager.shared.save(model: products, key: Keys.product)
                 completion(.success(products))
             case .failure(let error):

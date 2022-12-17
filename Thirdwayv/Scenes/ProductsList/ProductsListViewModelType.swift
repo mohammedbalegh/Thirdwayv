@@ -16,7 +16,6 @@ typealias ProductsListViewModelType = ProductsListViewModelInput & ProductsListV
 protocol ProductsListViewModelInput {
     var getProducts: ProductsCall { get } 
     func loadProducts()
-    func selectedIndex(_ indexPath: IndexPath)
 }
 
 /// ProductsList ViewModel Output
